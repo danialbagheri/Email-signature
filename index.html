@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      textarea {
+        width: 90%;
+        height: 200px;
+      }
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <img
+      src="https://s3.eu-west-2.amazonaws.com/lincocare/Linco-small.png"
+      style="width:150px;margin:auto;"
+    />
+    <h1 style="font='Sans-serif';font-weight:100;">SIGNITURE GENERATOR</h1>
+    </br>
+    <form>
+      <label>Name:</label> <input id="formName" /> <label>Role:</label>
+      <input id="formRole" /> <label>Email:</label> <input id="formEmail" />
+      <button onclick="updateInfo()" type="button" id="update">UPDATE</button>
+    </form>
+
+    <h3>RENDERED HTML</h3>
+
+    <table cellpadding="0" cellspacing="0" border="0" style="width: 472px;">
+      <tbody>
+        <tr>
+          <td style="padding-bottom: 5px;">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td style="padding-bottom: 5px;">
+                    <a href="http://www.lincocare.com"
+                      ><img
+                        id="TemplateLogo"
+                        data-class="external"
+                        src="https://s3.eu-west-2.amazonaws.com/lincocare/Linco-small.png"
+                        alt="Linco Care Ltd"
+                        style="display: block;padding-bottom:5px;"
+                    /></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    style="padding-bottom: 5px; font-family: Arial; font-size: 12pt; color: rgb(51, 51, 51);"
+                  >
+                    <font
+                      style="color: #333333; font-size: 12pt; font-family: Arial"
+                      id="name"
+                      >John Smith</font
+                    >
+                    <font
+                      style="color: #333333; font-size: 12pt; font-family: Arial"
+                      >&nbsp;|&nbsp;</font
+                    >
+                    <font
+                      style="color: #333333; font-size: 12pt; font-family: Arial"
+                      id="role"
+                      >Sales Manager</font
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family: Arial; font-size: 10pt;">
+                    <font
+                      style="color: #333333; font-size: 10pt; font-family: Arial"
+                      >T:&nbsp;<a
+                        href="tel:+44(0)1617779229"
+                        style="color: #03509c"
+                        >+44(0)1617779229</a
+                      ></font
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family: Arial; font-size: 10pt;">
+                    <font
+                      style="color: #333333; font-size: 10pt; font-family: Arial"
+                      >E:&nbsp;<a
+                        href="mailto:john.smith@lincocare.com"
+                        style="color: #03509c"
+                        id="email"
+                        >john.smith@lincocare.com</a
+                      ></font
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family: Arial; font-size: 10pt;">
+                    <font
+                      style="color: #333333; font-size: 10pt; font-family: Arial"
+                      >W:&nbsp;<a
+                        href="http://www.lincocare.com"
+                        style="color: #03509c"
+                        >www.lincocare.com</a
+                      ></font
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td
+            align="right"
+            valign="bottom"
+            style="padding-bottom: 5px; vertical-align: bottom;"
+          >
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="https://www.facebook.com/lincocare">
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-facebook_28x28.jpg"
+                      />
+                    </a>
+                  </td>
+                  <td style="padding-left: 5px;">
+                    <a href="https://twitter.com/lincocare">
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-twitter_28x28.jpg"
+                      />
+                    </a>
+                  </td>
+                  <td style="padding-left: 5px;">
+                    <a href="https://www.linkedin.com/company-beta/4036008/">
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-linkedin_28x28.jpg"
+                      />
+                    </a>
+                  </td>
+                  <td style="padding-left: 5px;">
+                    <a href="https://plus.google.com/111738867099541496926">
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-googleplus_28x28.jpg"
+                      />
+                    </a>
+                  </td>
+                  <td style="padding-left: 5px;">
+                    <a href="https://www.instagram.com/calypsosuncare/">
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-instagram_28x28.png"
+                      />
+                    </a>
+                  </td>
+                  <td style="padding-left: 5px;">
+                    <a
+                      href="https://www.youtube.com/channel/UCl0-N0lOSjoPYlc26LN-6mA"
+                    >
+                      <img
+                        data-class="external"
+                        style="display: block"
+                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-youtube_28x28.png"
+                      />
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td style="padding-bottom: 5px;">
+                    <a
+                      href="https://s3.eu-west-2.amazonaws.com/lincocare/Insiderbanner.png"
+                      ><img
+                        id="TemplateBanner"
+                        data-class="external"
+                        src="https://s3.eu-west-2.amazonaws.com/lincocare/Insiderbanner.png"
+                        alt="Linco Care Ltd"
+                        style="display: block"
+                    /></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-content="disclaimer"
+                    style="max-width: 468px; text-align: justify; font-size: 8pt; color: rgb(136, 136, 136);"
+                  >
+                    <font
+                      style="font-family: Arial; font-size: 8pt; color: rgb(136, 136, 136);"
+                      >The company accepts no liability for the content of this
+                      email, or for the consequences of any actions taken on the
+                      basis of the information provided, unless that information
+                      is subsequently confirmed in writing. If you are not the
+                      intended recipient you are notified that disclosing,
+                      copying, distributing or taking any action in reliance on
+                      the contents of this information is strictly
+                      prohibited.</font
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--  RAW CODE -->
+    <h3>Raw Code</h3>
+    <textarea id="codeArea">Your code will apear here</textarea>
+    <h3>Instructions</h3>
+    <button class="accordion">Apple Mail</button>
+    <div class="panel">
+      <p>
+        Inside of Apple Mail navigate to Preferences > Signatures and create a
+        new signature, populating it with some random content. Name the
+        signature something relevant and drag it onto the desired mail account.
+        The next step is to navigate to the folder containing your Apple Mail
+        signature we created earlier. This folder can be found at the below
+        location, the "#" will differ dependant on your software versions:
+        ~/Library/Mail/V#/MailData/Signatures/ Filter this folder by date and
+        open the latest .mailsignature file. Select everything below the top
+        paragraph, this should start with body, and delete it. Then paste your
+        HTML signature from the raw HTML above, ensuring the top paragraph
+        remains.Save the signature and navigate back to the "/Signatures/"
+        folder. Right click the .mailsignature file you've just edited and
+        select "Get Info" and check the "Locked" option.
+      </p>
+    </div>
+
+    <button class="accordion">OUTLOOK 2010 +</button>
+    <div class="panel">
+      <p>
+        To install your signature into Outlook, navigate to your Outlook client
+        and create a new blank signature. This can be done by going to File >
+        Options > Mail then click Signatures and New. Give the signature a
+        memorable name and then click Ok to save and then close the dialog box.
+        Close Outlook completely. Navigate to the new signatures directory in
+        your File Explorer. This should be found in:
+        C:\Users\username\AppData\Roaming\Microsoft\Signatures. Windows XP users
+        should instead navigate to: C:\Documents and
+        Settings\username\Application Data\Microsoft\Signatures Locate the .htm
+        file with the same name that you assigned to the signature earlier. Open
+        this file in a text-editor program. Delete the content of the file and
+        paste the raw HTML into it. Click save and close the file. Then re-open
+        your Outlook and the new signature should be available to use.
+      </p>
+    </div>
+
+    <button class="accordion">iPhone</button>
+    <div class="panel">
+      <p>
+        1-Create your email signature in an email client that supports HTML e.g.
+        Outlook or Gmail. Make sure you add content such as your logo, social
+        media icons and legal disclaimer. 2-Send a blank email with the new HTML
+        signature to your iPhone. 3-Open the email you sent to your iPhone. Find
+        a part of the signature text that is not a web or email link. Press and
+        hold this text. 4-The context menu will appear over the text. Tap Select
+        All, then Copy. 5-Go into the iPhone email signature editor by going to
+        Settings > Mail, Contacts, Calendars > Signature. 6-Delete any plain
+        text email signature you might already have, press and hold the screen
+        until the context menu appears and select Paste. 7-The new email
+        signature will now appear in the editor. The original formatting will
+        have been lost and it will appear slightly altered – this is normal so
+        don’t panic! iOS automatically adds its own coding to the HTML source of
+        the email signature. All you have to do is shake your iPhone to trigger
+        the Undo Change Attributes context menu and select Undo. 8-You’ve now
+        successfully removed the additional iOS formatting. 9-Go into the iPhone
+        Mail app to see your new HTML email signature in all its glory. You’ll
+        want to test it thoroughly before sending out any emails to other
+        recipients.
+      </p>
+    </div>
+
+    <script>
+      let name = document.getElementById("formName");
+      let role = document.getElementById("formRole");
+      let email = document.getElementById("formEmail");
+      let codeArea = document.getElementById("codeArea");
+      function codeGenerator() {
+        var blockOfCode = "";
+        blockOfCode +=
+          ' <table cellpadding="0" cellspacing="0" border="0" style="width: 472px;">';
+        blockOfCode += "      <tbody>";
+        blockOfCode += "        <tr>";
+        blockOfCode += '          <td style="padding-bottom: 5px;">';
+        blockOfCode +=
+          '            <table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "              <tbody>";
+        blockOfCode += "                <tr>";
+        blockOfCode += '                  <td style="padding-bottom: 5px;">';
+        blockOfCode +=
+          '                    <a href="http:\/\/www.lincocare.com"';
+        blockOfCode += "                      ><img";
+        blockOfCode += '                        id="TemplateLogo"';
+        blockOfCode += '                        data-class="external"';
+        blockOfCode +=
+          '                        src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Linco-small.png"';
+        blockOfCode += '                        alt="Linco Care Ltd"';
+        blockOfCode +=
+          '                        style="display: block;padding-bottom:5px;"';
+        blockOfCode += "                    \/><\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "                <tr>";
+        blockOfCode += "                  <td";
+        blockOfCode +=
+          '                    style="padding-bottom: 5px; font-family: Arial; font-size: 12pt; color: rgb(51, 51, 51);"';
+        blockOfCode += "                  >";
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          'style="color: #333333; font-size: 12pt; font-family: Arial">';
+        blockOfCode += name.value;
+        blockOfCode += "<\/font>";
+        blockOfCode += "<font";
+        blockOfCode +=
+          'style="color: #333333; font-size: 12pt; font-family: Arial"';
+        blockOfCode += ">&nbsp;|&nbsp;<\/font";
+        blockOfCode += "                    >";
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          '                      style="color: #333333; font-size: 12pt; font-family: Arial">';
+        blockOfCode += role.value;
+        blockOfCode += "<\/font>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "                <tr>";
+        blockOfCode +=
+          '                  <td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += "                      >T:&nbsp;<a";
+        blockOfCode += '                        href="tel:+44(0)1617779229"';
+        blockOfCode += '                        style="color: #03509c"';
+        blockOfCode += "                        >+44(0)1617779229<\/a";
+        blockOfCode += "                      ><\/font";
+        blockOfCode += "                    >";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "                <tr>";
+        blockOfCode +=
+          '                  <td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += "                      >E:&nbsp;<a ";
+        blockOfCode += 'href="mailto:' + email.value + '"';
+        blockOfCode += 'style="color: #03509c"';
+        blockOfCode += '                        id="email">';
+        blockOfCode += email.value;
+        blockOfCode += "<\/a><\/font";
+        blockOfCode += "                    >";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "                <tr>";
+        blockOfCode +=
+          '                  <td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += "                      >W:&nbsp;<a";
+        blockOfCode +=
+          '                        href="http:\/\/www.lincocare.com"';
+        blockOfCode += '                        style="color: #03509c"';
+        blockOfCode += "                        >www.lincocare.com<\/a";
+        blockOfCode += "                      ><\/font";
+        blockOfCode += "                    >";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "              <\/tbody>";
+        blockOfCode += "            <\/table>";
+        blockOfCode += "          <\/td>";
+        blockOfCode += "          <td";
+        blockOfCode += '            align="right"';
+        blockOfCode += '            valign="bottom"';
+        blockOfCode +=
+          '            style="padding-bottom: 5px; vertical-align: bottom;"';
+        blockOfCode += "          >";
+        blockOfCode +=
+          '            <table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "              <tbody>";
+        blockOfCode += "                <tr>";
+        blockOfCode += "                  <td>";
+        blockOfCode +=
+          '                    <a href="https:\/\/www.facebook.com\/lincocare">';
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-facebook_28x28.jpg"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += '                  <td style="padding-left: 5px;">';
+        blockOfCode +=
+          '                    <a href="https:\/\/twitter.com\/lincocare">';
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-twitter_28x28.jpg"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += '                  <td style="padding-left: 5px;">';
+        blockOfCode +=
+          '                    <a href="https:\/\/www.linkedin.com\/company-beta\/4036008\/">';
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-linkedin_28x28.jpg"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += '                  <td style="padding-left: 5px;">';
+        blockOfCode +=
+          '                    <a href="https:\/\/plus.google.com\/111738867099541496926">';
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-googleplus_28x28.jpg"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += '                  <td style="padding-left: 5px;">';
+        blockOfCode +=
+          '                    <a href="https:\/\/www.instagram.com\/calypsosuncare\/">';
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-instagram_28x28.png"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += '                  <td style="padding-left: 5px;">';
+        blockOfCode += "                    <a";
+        blockOfCode +=
+          '                      href="https:\/\/www.youtube.com\/channel\/UCl0-N0lOSjoPYlc26LN-6mA"';
+        blockOfCode += "                    >";
+        blockOfCode += "                      <img";
+        blockOfCode += '                        data-class="external"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode +=
+          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-youtube_28x28.png"';
+        blockOfCode += "                      \/>";
+        blockOfCode += "                    <\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "              <\/tbody>";
+        blockOfCode += "            <\/table>";
+        blockOfCode += "          <\/td>";
+        blockOfCode += "        <\/tr>";
+        blockOfCode += "        <tr>";
+        blockOfCode += '          <td colspan="2">';
+        blockOfCode +=
+          '            <table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "              <tbody>";
+        blockOfCode += "                <tr>";
+        blockOfCode += '                  <td style="padding-bottom: 5px;">';
+        blockOfCode += "                    <a";
+        blockOfCode +=
+          '                      href="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
+        blockOfCode += "                      ><img";
+        blockOfCode += '                        id="TemplateBanner"';
+        blockOfCode += '                        data-class="external"';
+        blockOfCode +=
+          '                        src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
+        blockOfCode += '                        alt="Linco Care Ltd"';
+        blockOfCode += '                        style="display: block"';
+        blockOfCode += "                    \/><\/a>";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "                <tr>";
+        blockOfCode += "                  <td";
+        blockOfCode += '                    data-content="disclaimer"';
+        blockOfCode +=
+          '                    style="max-width: 468px; text-align: justify; font-size: 8pt; color: rgb(136, 136, 136);"';
+        blockOfCode += "                  >";
+        blockOfCode += "                    <font";
+        blockOfCode +=
+          '                      style="font-family: Arial; font-size: 8pt; color: rgb(136, 136, 136);"';
+        blockOfCode +=
+          "                      >The company accepts no liability for the content of this";
+        blockOfCode +=
+          "                      email, or for the consequences of any actions taken on the";
+        blockOfCode +=
+          "                      basis of the information provided, unless that information";
+        blockOfCode +=
+          "                      is subsequently confirmed in writing. If you are not the";
+        blockOfCode +=
+          "                      intended recipient you are notified that disclosing,";
+        blockOfCode +=
+          "                      copying, distributing or taking any action in reliance on";
+        blockOfCode +=
+          "                      the contents of this information is strictly";
+        blockOfCode += "                      prohibited.<\/font";
+        blockOfCode += "                    >";
+        blockOfCode += "                  <\/td>";
+        blockOfCode += "                <\/tr>";
+        blockOfCode += "              <\/tbody>";
+        blockOfCode += "            <\/table>";
+        blockOfCode += "          <\/td>";
+        blockOfCode += "        <\/tr>";
+        blockOfCode += "      <\/tbody>";
+        blockOfCode += "    <\/table>";
+        return blockOfCode;
+      }
+      function updateInfo() {
+        document.getElementById("name").innerHTML = name.value;
+        document.getElementById("role").innerHTML = role.value;
+        document.getElementById("email").innerHTML = email.value;
+        document.getElementById("email").href = "mailto:" + email.value;
+        codeArea.innerHTML = codeGenerator();
+      }
+    </script>
+    <script>
+      // Acordion help
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
