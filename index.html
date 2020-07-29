@@ -49,14 +49,24 @@
     <h1 style="font='Sans-serif';font-weight:100;">SIGNITURE GENERATOR</h1>
     </br>
     <form>
+      <p>
+        If you leave the extension number empty, nothing will appear in front of the number.</p>
+        <p><span style="color: red;">Mobile numbers must belong to company and personal mobile number may not be used unless it's permitted.</span></br></p>
+        <p>
+        ONLY MOBILE NUMBER OR EXTENSION NUMBER SHALL BE USED DUE TO SPACE LIMITATION.
+      </p>
       <label>Name:</label> <input id="formName" /> <label>Role:</label>
-      <input id="formRole" /> <label>Email:</label> <input id="formEmail" />
-      <button onclick="updateInfo()" type="button" id="update">UPDATE</button>
+      <input id="formRole" /> <label>Email:</label> <input id="formEmail" type="email"/></br>
+      <div style="margin-top:1rem;">
+        <label>Extension Number:</label> <input id="formExt" type="number" />
+        <label>Mobile Number:</label> <input id="formMob" type="number" />
+      </div>
+      <button onclick="updateInfo()" type="button" id="update" style="background-color: blue; border-radius:20px;padding: 3px 5px;color:#fff;">UPDATE</button>
     </form>
 
     <h3>RENDERED HTML</h3>
 
-    <table cellpadding="0" cellspacing="0" border="0" style="width: 472px;">
+    <table cellpadding="0" cellspacing="0" border="0"style="width: 472px;">
       <tbody>
         <tr>
           <td style="padding-bottom: 5px;">
@@ -64,7 +74,7 @@
               <tbody>
                 <tr>
                   <td style="padding-bottom: 5px;">
-                    <a href="http://www.lincocare.com"
+                    <a href="http://lincocare.com"
                       ><img
                         id="TemplateLogo"
                         data-class="external"
@@ -97,20 +107,23 @@
                 <tr>
                   <td style="font-family: Arial; font-size: 10pt;">
                     <font
-                      style="color: #333333; font-size: 10pt; font-family: Arial"
-                      >T:&nbsp;<a
+                      style="color: #333333; font-size: 11pt; font-family: Arial"
+                      ><a
                         href="tel:+44(0)1617779229"
                         style="color: #03509c"
                         >+44(0)1617779229</a
-                      ></font
-                    >
+                      ></font>
+                      <font id="extension" style="color: #333333; font-size: 12pt; font-family: Arial;padding-left:5px;">
+                        EXT:&nbsp;181
+                      </font>
                   </td>
+
                 </tr>
-                <tr>
-                  <td style="font-family: Arial; font-size: 10pt;">
+                <tr style="margin-top:4px;">
+                  <td style="font-family: Arial; font-size: 11pt;">
                     <font
-                      style="color: #333333; font-size: 10pt; font-family: Arial"
-                      >E:&nbsp;<a
+                      style="color: #333333; font-size: 11pt; font-family: Arial;"
+                      ><a
                         href="mailto:john.smith@lincocare.com"
                         style="color: #03509c"
                         id="email"
@@ -120,13 +133,13 @@
                   </td>
                 </tr>
                 <tr>
-                  <td style="font-family: Arial; font-size: 10pt;">
+                  <td style="font-family: Arial; font-size: 11pt;">
                     <font
-                      style="color: #333333; font-size: 10pt; font-family: Arial"
-                      >W:&nbsp;<a
-                        href="http://www.lincocare.com"
+                      style="color: #333333; font-size: 11pt; font-family: Arial"
+                      ><a
+                        href="http://lincocare.com"
                         style="color: #03509c"
-                        >www.lincocare.com</a
+                        >lincocare.com</a
                       ></font
                     >
                   </td>
@@ -141,7 +154,8 @@
           >
             <table cellpadding="0" cellspacing="0" border="0">
               <tbody>
-                <tr>
+
+
                   <td>
                     <a href="https://www.facebook.com/lincocare">
                       <img
@@ -161,7 +175,7 @@
                     </a>
                   </td>
                   <td style="padding-left: 5px;">
-                    <a href="https://www.linkedin.com/company-beta/4036008/">
+                    <a href="https://www.linkedin.com/company/4036008">
                       <img
                         data-class="external"
                         style="display: block"
@@ -169,15 +183,7 @@
                       />
                     </a>
                   </td>
-                  <td style="padding-left: 5px;">
-                    <a href="https://plus.google.com/111738867099541496926">
-                      <img
-                        data-class="external"
-                        style="display: block"
-                        src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-googleplus_28x28.jpg"
-                      />
-                    </a>
-                  </td>
+                
                   <td style="padding-left: 5px;">
                     <a href="https://www.instagram.com/calypsosuncare/">
                       <img
@@ -197,6 +203,7 @@
                         src="https://a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com/icon-youtube_28x28.png"
                       />
                     </a>
+
                   </td>
                 </tr>
               </tbody>
@@ -225,17 +232,7 @@
                     data-content="disclaimer"
                     style="max-width: 468px; text-align: justify; font-size: 8pt; color: rgb(136, 136, 136);"
                   >
-                    <font
-                      style="font-family: Arial; font-size: 8pt; color: rgb(136, 136, 136);"
-                      >The company accepts no liability for the content of this
-                      email, or for the consequences of any actions taken on the
-                      basis of the information provided, unless that information
-                      is subsequently confirmed in writing. If you are not the
-                      intended recipient you are notified that disclosing,
-                      copying, distributing or taking any action in reliance on
-                      the contents of this information is strictly
-                      prohibited.</font
-                    >
+                    
                   </td>
                 </tr>
               </tbody>
@@ -316,237 +313,215 @@
       let name = document.getElementById("formName");
       let role = document.getElementById("formRole");
       let email = document.getElementById("formEmail");
+      let ext = document.getElementById("formExt");
+      let mob = document.getElementById("formMob");
       let codeArea = document.getElementById("codeArea");
       function codeGenerator() {
         var blockOfCode = "";
         blockOfCode +=
-          ' <table cellpadding="0" cellspacing="0" border="0" style="width: 472px;">';
-        blockOfCode += "      <tbody>";
-        blockOfCode += "        <tr>";
-        blockOfCode += '          <td style="padding-bottom: 5px;">';
+          '<table cellpadding="0" cellspacing="0" border="0"style="width: 472px;">\n';
+        blockOfCode += "<tbody>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += '<td style="padding-bottom: 5px;">';
         blockOfCode +=
-          '            <table cellpadding="0" cellspacing="0" border="0">';
-        blockOfCode += "              <tbody>";
-        blockOfCode += "                <tr>";
-        blockOfCode += '                  <td style="padding-bottom: 5px;">';
+          '<table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "<tbody>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += '<td style="padding-bottom: 5px;">';
         blockOfCode +=
-          '                    <a href="http:\/\/www.lincocare.com"';
-        blockOfCode += "                      ><img";
+          '<a href="http:\/\/lincocare.com"';
+        blockOfCode += "><img\n";
         blockOfCode += '                        id="TemplateLogo"';
-        blockOfCode += '                        data-class="external"';
+        blockOfCode += 'data-class="external"';
         blockOfCode +=
-          '                        src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Linco-small.png"';
+          'src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Linco-small.png"';
         blockOfCode += '                        alt="Linco Care Ltd"';
         blockOfCode +=
-          '                        style="display: block;padding-bottom:5px;"';
-        blockOfCode += "                    \/><\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "                <tr>";
-        blockOfCode += "                  <td";
+          'style="display: block;padding-bottom:5px;"';
+        blockOfCode += "                    \/><\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += "<td\n";
         blockOfCode +=
-          '                    style="padding-bottom: 5px; font-family: Arial; font-size: 12pt; color: rgb(51, 51, 51);"';
-        blockOfCode += "                  >";
-        blockOfCode += "                    <font";
+          'style="padding-bottom: 5px; font-family: Arial; font-size: 12pt; color: rgb(51, 51, 51);"';
+        blockOfCode += ">\n";
+        blockOfCode += "<font\n";
         blockOfCode +=
           'style="color: #333333; font-size: 12pt; font-family: Arial">';
         blockOfCode += name.value;
-        blockOfCode += "<\/font>";
-        blockOfCode += "<font";
+        blockOfCode += "<\/font>\n";
+        blockOfCode += "<font\n";
         blockOfCode +=
           'style="color: #333333; font-size: 12pt; font-family: Arial"';
-        blockOfCode += ">&nbsp;|&nbsp;<\/font";
-        blockOfCode += "                    >";
-        blockOfCode += "                    <font";
+        blockOfCode += ">&nbsp;|&nbsp;<\/font\n";
+        blockOfCode += ">\n";
+        blockOfCode += "<font\n";
         blockOfCode +=
-          '                      style="color: #333333; font-size: 12pt; font-family: Arial">';
+          'style="color: #333333; font-size: 12pt; font-family: Arial">';
         blockOfCode += role.value;
-        blockOfCode += "<\/font>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "                <tr>";
+        blockOfCode += "<\/font>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
         blockOfCode +=
-          '                  <td style="font-family: Arial; font-size: 10pt;">';
-        blockOfCode += "                    <font";
+          '<td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "<font\n";
         blockOfCode +=
-          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
-        blockOfCode += "                      >T:&nbsp;<a";
-        blockOfCode += '                        href="tel:+44(0)1617779229"';
-        blockOfCode += '                        style="color: #03509c"';
-        blockOfCode += "                        >+44(0)1617779229<\/a";
-        blockOfCode += "                      ><\/font";
-        blockOfCode += "                    >";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "                <tr>";
+          'style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += ">T:&nbsp;<a\n";
+        blockOfCode += 'href="tel:+44(0)161 7779229"';
+        blockOfCode += 'style="color: #03509c"';
+        blockOfCode += ">+44(0)1617779229<\/a\n";
+        blockOfCode += "><\/font\n";
+        blockOfCode += ">\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
         blockOfCode +=
-          '                  <td style="font-family: Arial; font-size: 10pt;">';
-        blockOfCode += "                    <font";
+          '<td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "<font\n";
         blockOfCode +=
-          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
-        blockOfCode += "                      >E:&nbsp;<a ";
+          'style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += ">E:&nbsp;<a \n";
         blockOfCode += 'href="mailto:' + email.value + '"';
         blockOfCode += 'style="color: #03509c"';
         blockOfCode += '                        id="email">';
         blockOfCode += email.value;
-        blockOfCode += "<\/a><\/font";
-        blockOfCode += "                    >";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "                <tr>";
+        blockOfCode += "<\/a><\/font\n";
+        blockOfCode += ">\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
         blockOfCode +=
-          '                  <td style="font-family: Arial; font-size: 10pt;">';
-        blockOfCode += "                    <font";
+          '<td style="font-family: Arial; font-size: 10pt;">';
+        blockOfCode += "<font\n";
         blockOfCode +=
-          '                      style="color: #333333; font-size: 10pt; font-family: Arial"';
-        blockOfCode += "                      >W:&nbsp;<a";
+          'style="color: #333333; font-size: 10pt; font-family: Arial"';
+        blockOfCode += ">W:&nbsp;<a\n";
         blockOfCode +=
-          '                        href="http:\/\/www.lincocare.com"';
-        blockOfCode += '                        style="color: #03509c"';
-        blockOfCode += "                        >www.lincocare.com<\/a";
-        blockOfCode += "                      ><\/font";
-        blockOfCode += "                    >";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "              <\/tbody>";
-        blockOfCode += "            <\/table>";
-        blockOfCode += "          <\/td>";
-        blockOfCode += "          <td";
+          'href="http:\/\/lincocare.com"';
+        blockOfCode += 'style="color: #03509c"';
+        blockOfCode += ">lincocare.com<\/a\n";
+        blockOfCode += "><\/font\n";
+        blockOfCode += ">\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<\/tbody>\n";
+        blockOfCode += "<\/table>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<td\n";
         blockOfCode += '            align="right"';
         blockOfCode += '            valign="bottom"';
         blockOfCode +=
-          '            style="padding-bottom: 5px; vertical-align: bottom;"';
-        blockOfCode += "          >";
+          'style="padding-bottom: 5px; vertical-align: bottom;"';
+        blockOfCode += ">\n";
         blockOfCode +=
-          '            <table cellpadding="0" cellspacing="0" border="0">';
-        blockOfCode += "              <tbody>";
-        blockOfCode += "                <tr>";
-        blockOfCode += "                  <td>";
+          '<table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "<tbody>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += "<td>\n";
         blockOfCode +=
-          '                    <a href="https:\/\/www.facebook.com\/lincocare">';
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          '<a href="https:\/\/www.facebook.com\/lincocare">';
+        blockOfCode += "<img\n";
+        blockOfCode += 'data-class="external"';
+        blockOfCode += 'style="display: block"';
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-facebook_28x28.jpg"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += '                  <td style="padding-left: 5px;">';
+          'src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-facebook_28x28.jpg"';
+        blockOfCode += "                      \/>\n";
+        blockOfCode += "<\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += '<td style="padding-left: 5px;">';
         blockOfCode +=
-          '                    <a href="https:\/\/twitter.com\/lincocare">';
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          '<a href="https:\/\/twitter.com\/lincocare">';
+        blockOfCode += "<img\n";
+        blockOfCode += 'data-class="external"';
+        blockOfCode += 'style="display: block"';
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-twitter_28x28.jpg"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += '                  <td style="padding-left: 5px;">';
+          'src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-twitter_28x28.jpg"';
+        blockOfCode += "                      \/>\n";
+        blockOfCode += "<\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += '<td style="padding-left: 5px;">';
         blockOfCode +=
-          '                    <a href="https:\/\/www.linkedin.com\/company-beta\/4036008\/">';
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          '<a href="https:\/\/www.linkedin.com\/company\/4036008\/">';
+        blockOfCode += "<img\n";
+        blockOfCode += 'data-class="external"';
+        blockOfCode += 'style="display: block"';
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-linkedin_28x28.jpg"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += '                  <td style="padding-left: 5px;">';
+          'src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-linkedin_28x28.jpg"';
+        blockOfCode += "                      \/>\n";
+        blockOfCode += "<\/a>\n";
+        blockOfCode += "<\/td>\n";
+        
+        blockOfCode += '<td style="padding-left: 5px;">';
         blockOfCode +=
-          '                    <a href="https:\/\/plus.google.com\/111738867099541496926">';
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          '<a href="https:\/\/www.instagram.com\/calypsosuncare\/">';
+        blockOfCode += "<img\n";
+        blockOfCode += 'data-class="external"';
+        blockOfCode += 'style="display: block"';
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-googleplus_28x28.jpg"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += '                  <td style="padding-left: 5px;">';
+          'src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-instagram_28x28.png"';
+        blockOfCode += "                      \/>\n";
+        blockOfCode += "<\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += '<td style="padding-left: 5px;">';
+        blockOfCode += "<a\n";
         blockOfCode +=
-          '                    <a href="https:\/\/www.instagram.com\/calypsosuncare\/">';
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          'href="https:\/\/www.youtube.com\/channel\/UCl0-N0lOSjoPYlc26LN-6mA"';
+        blockOfCode += ">\n";
+        blockOfCode += "<img\n";
+        blockOfCode += 'data-class="external"';
+        blockOfCode += 'style="display: block"';
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-instagram_28x28.png"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += '                  <td style="padding-left: 5px;">';
-        blockOfCode += "                    <a";
+          'src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-youtube_28x28.png"';
+        blockOfCode += "                      \/>\n";
+        blockOfCode += "<\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<\/tbody>\n";
+        blockOfCode += "<\/table>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += '<td colspan="2">';
         blockOfCode +=
-          '                      href="https:\/\/www.youtube.com\/channel\/UCl0-N0lOSjoPYlc26LN-6mA"';
-        blockOfCode += "                    >";
-        blockOfCode += "                      <img";
-        blockOfCode += '                        data-class="external"';
-        blockOfCode += '                        style="display: block"';
+          '<table cellpadding="0" cellspacing="0" border="0">';
+        blockOfCode += "<tbody>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += '<td style="padding-bottom: 5px;">';
+        blockOfCode += "<a\n";
         blockOfCode +=
-          '                        src="https:\/\/a8b03ffbc00ed4da54a1-0c6684360696717b63d89dbc0edb802c.ssl.cf1.rackcdn.com\/icon-youtube_28x28.png"';
-        blockOfCode += "                      \/>";
-        blockOfCode += "                    <\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "              <\/tbody>";
-        blockOfCode += "            <\/table>";
-        blockOfCode += "          <\/td>";
-        blockOfCode += "        <\/tr>";
-        blockOfCode += "        <tr>";
-        blockOfCode += '          <td colspan="2">';
-        blockOfCode +=
-          '            <table cellpadding="0" cellspacing="0" border="0">';
-        blockOfCode += "              <tbody>";
-        blockOfCode += "                <tr>";
-        blockOfCode += '                  <td style="padding-bottom: 5px;">';
-        blockOfCode += "                    <a";
-        blockOfCode +=
-          '                      href="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
-        blockOfCode += "                      ><img";
+          'href="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
+        blockOfCode += "><img\n";
         blockOfCode += '                        id="TemplateBanner"';
-        blockOfCode += '                        data-class="external"';
+        blockOfCode += 'data-class="external"';
         blockOfCode +=
-          '                        src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
+          'src="https:\/\/s3.eu-west-2.amazonaws.com\/lincocare\/Insiderbanner.png"';
         blockOfCode += '                        alt="Linco Care Ltd"';
-        blockOfCode += '                        style="display: block"';
-        blockOfCode += "                    \/><\/a>";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "                <tr>";
-        blockOfCode += "                  <td";
-        blockOfCode += '                    data-content="disclaimer"';
+        blockOfCode += 'style="display: block"';
+        blockOfCode += "                    \/><\/a>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<tr>\n";
+        blockOfCode += "<td\n";
+        blockOfCode += 'data-content="disclaimer"';
         blockOfCode +=
-          '                    style="max-width: 468px; text-align: justify; font-size: 8pt; color: rgb(136, 136, 136);"';
-        blockOfCode += "                  >";
-        blockOfCode += "                    <font";
+          'style="max-width: 468px; text-align: justify; font-size: 8pt; color: rgb(136, 136, 136);"';
+        blockOfCode += ">\n";
+        blockOfCode += "<font\n";
         blockOfCode +=
-          '                      style="font-family: Arial; font-size: 8pt; color: rgb(136, 136, 136);"';
-        blockOfCode +=
-          "                      >The company accepts no liability for the content of this";
-        blockOfCode +=
-          "                      email, or for the consequences of any actions taken on the";
-        blockOfCode +=
-          "                      basis of the information provided, unless that information";
-        blockOfCode +=
-          "                      is subsequently confirmed in writing. If you are not the";
-        blockOfCode +=
-          "                      intended recipient you are notified that disclosing,";
-        blockOfCode +=
-          "                      copying, distributing or taking any action in reliance on";
-        blockOfCode +=
-          "                      the contents of this information is strictly";
-        blockOfCode += "                      prohibited.<\/font";
-        blockOfCode += "                    >";
-        blockOfCode += "                  <\/td>";
-        blockOfCode += "                <\/tr>";
-        blockOfCode += "              <\/tbody>";
-        blockOfCode += "            <\/table>";
-        blockOfCode += "          <\/td>";
-        blockOfCode += "        <\/tr>";
-        blockOfCode += "      <\/tbody>";
-        blockOfCode += "    <\/table>";
+          'style="font-family: Arial; font-size: 8pt; color: rgb(136, 136, 136);"';
+        
+        blockOfCode += ">\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<\/tbody>\n";
+        blockOfCode += "<\/table>\n";
+        blockOfCode += "<\/td>\n";
+        blockOfCode += "<\/tr>\n";
+        blockOfCode += "<\/tbody>\n";
+        blockOfCode += "<\/table>\n";
         return blockOfCode;
       }
       function updateInfo() {
@@ -554,11 +529,20 @@
         document.getElementById("role").innerHTML = role.value;
         document.getElementById("email").innerHTML = email.value;
         document.getElementById("email").href = "mailto:" + email.value;
+        if (ext.value > ""){
+          document.getElementById("extension").innerHTML = "Ext:&nbsp;#" + ext.value;
+        } else{
+           if (mob.value > "") {
+                document.getElementById("extension").innerHTML = `&#128241;: <a href="tel:${mob.value}" style ="color: #03509c">${mob.value}<\/a>`;
+              } else {
+          document.getElementById("extension").innerHTML = "";
+              }
+        }
         codeArea.innerHTML = codeGenerator();
       }
     </script>
     <script>
-      // Acordion help
+      // Accordion help
       var acc = document.getElementsByClassName("accordion");
       var i;
 
