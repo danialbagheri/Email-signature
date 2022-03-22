@@ -46,7 +46,7 @@
       src="https://s3.eu-west-2.amazonaws.com/lincocare/Linco-small.png"
       style="width:150px;margin:auto;"
     />
-    <h1 style="font='Sans-serif';font-weight:100;">SIGNITURE GENERATOR</h1>
+    <h1 style="font:'Sans-serif';font-weight:100;">SIGNATURE GENERATOR</h1>
     </br>
     <form>
       <p>
@@ -65,7 +65,7 @@
     </form>
 
     <h3>RENDERED HTML</h3>
-    <div id="signature">
+    <div id="Signature">
     <table cellpadding="0" cellspacing="0" border="0"style="width: 472px;">
       <tbody>
         <tr>
@@ -251,17 +251,17 @@
     <div class="panel">
       <p>
         Inside of Apple Mail navigate to Preferences > Signatures and create a
-        new signature, populating it with some random content. Name the
-        signature something relevant and drag it onto the desired mail account.
+        new Signature, populating it with some random content. Name the
+        Signature something relevant and drag it onto the desired mail account.
         The next step is to navigate to the folder containing your Apple Mail
-        signature we created earlier. This folder can be found at the below
+        Signature we created earlier. This folder can be found at the below
         location, the "#" will differ dependant on your software versions:
         ~/Library/Mail/V#/MailData/Signatures/ Filter this folder by date and
-        open the latest .mailsignature file. Select everything below the top
+        open the latest .mailSignature file. Select everything below the top
         paragraph, this should start with body, and delete it. Then paste your
-        HTML signature from the raw HTML above, ensuring the top paragraph
-        remains.Save the signature and navigate back to the "/Signatures/"
-        folder. Right click the .mailsignature file you've just edited and
+        HTML Signature from the raw HTML above, ensuring the top paragraph
+        remains.Save the Signature and navigate back to the "/Signatures/"
+        folder. Right click the .mailSignature file you've just edited and
         select "Get Info" and check the "Locked" option.
       </p>
     </div>
@@ -269,42 +269,42 @@
     <button class="accordion">OUTLOOK 2010 +</button>
     <div class="panel">
       <p>
-        To install your signature into Outlook, navigate to your Outlook client
-        and create a new blank signature. This can be done by going to File >
-        Options > Mail then click Signatures and New. Give the signature a
+        To install your Signature into Outlook, navigate to your Outlook client
+        and create a new blank Signature. This can be done by going to File >
+        Options > Mail then click Signatures and New. Give the Signature a
         memorable name and then click Ok to save and then close the dialog box.
-        Close Outlook completely. Navigate to the new signatures directory in
+        Close Outlook completely. Navigate to the new Signatures directory in
         your File Explorer. This should be found in:
         C:\Users\username\AppData\Roaming\Microsoft\Signatures. Windows XP users
         should instead navigate to: C:\Documents and
         Settings\username\Application Data\Microsoft\Signatures Locate the .htm
-        file with the same name that you assigned to the signature earlier. Open
+        file with the same name that you assigned to the Signature earlier. Open
         this file in a text-editor program. Delete the content of the file and
         paste the raw HTML into it. Click save and close the file. Then re-open
-        your Outlook and the new signature should be available to use.
+        your Outlook and the new Signature should be available to use.
       </p>
     </div>
 
     <button class="accordion">iPhone</button>
     <div class="panel">
       <p>
-        1-Create your email signature in an email client that supports HTML e.g.
+        1-Create your email Signature in an email client that supports HTML e.g.
         Outlook or Gmail. Make sure you add content such as your logo, social
         media icons and legal disclaimer. 2-Send a blank email with the new HTML
-        signature to your iPhone. 3-Open the email you sent to your iPhone. Find
-        a part of the signature text that is not a web or email link. Press and
+        Signature to your iPhone. 3-Open the email you sent to your iPhone. Find
+        a part of the Signature text that is not a web or email link. Press and
         hold this text. 4-The context menu will appear over the text. Tap Select
-        All, then Copy. 5-Go into the iPhone email signature editor by going to
+        All, then Copy. 5-Go into the iPhone email Signature editor by going to
         Settings > Mail, Contacts, Calendars > Signature. 6-Delete any plain
-        text email signature you might already have, press and hold the screen
+        text email Signature you might already have, press and hold the screen
         until the context menu appears and select Paste. 7-The new email
-        signature will now appear in the editor. The original formatting will
+        Signature will now appear in the editor. The original formatting will
         have been lost and it will appear slightly altered – this is normal so
         don’t panic! iOS automatically adds its own coding to the HTML source of
-        the email signature. All you have to do is shake your iPhone to trigger
+        the email Signature. All you have to do is shake your iPhone to trigger
         the Undo Change Attributes context menu and select Undo. 8-You’ve now
         successfully removed the additional iOS formatting. 9-Go into the iPhone
-        Mail app to see your new HTML email signature in all its glory. You’ll
+        Mail app to see your new HTML email Signature in all its glory. You’ll
         want to test it thoroughly before sending out any emails to other
         recipients.
       </p>
@@ -312,14 +312,14 @@
 
     <script>
       let name = document.getElementById("formName");
-      let signature = document.getElementById("signature");
+      let Signature = document.getElementById("Signature");
       let role = document.getElementById("formRole");
       let email = document.getElementById("formEmail");
       let ext = document.getElementById("formExt");
       let mob = document.getElementById("formMob");
       let codeArea = document.getElementById("codeArea");
       function codeGenerator() {
-        var code = signature.cloneNode(true);
+        var code = Signature.cloneNode(true);
         return code;
       }
       function updateInfo() {
