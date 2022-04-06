@@ -42,10 +42,10 @@ export default function PersonalDetail(props) {
         <tr>
           <td>
             <font style={documentStyles.personalDetailFont}>
-              <a href="tel:+44(0)1617779229">+44(0)1617779229</a>
+              <a href="tel:+441617779229">+44 (0) 161 7779229</a>
             </font>
             <font style={documentStyles.personalDetailFont} id="extension">
-              &nbsp;EXT:&nbsp;{formData.extension}
+              &nbsp; EXT:&nbsp;{formData.extension}
             </font>
           </td>
         </tr>

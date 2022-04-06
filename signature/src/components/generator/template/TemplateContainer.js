@@ -1,20 +1,43 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import PersonalDetail from "./PersonalDetail";
 import LincoCareLogo from "./LincoCareLogo";
 import Banner from "./Banner";
 import Sedex from "./Sedex";
+import SocialIcons from "./SocialIcons";
 
 export default function Template(props) {
+  const [copied, setCopied] = useState(false);
   const sign = useRef(null);
   const codePlaceHolder = useRef(null);
   function handleClick() {
-    console.log(sign.current);
     const code = sign.current.cloneNode(true);
-    console.log(code);
-    console.log(codePlaceHolder.current);
     codePlaceHolder.current.innerHTML = code.innerHTML;
   }
+  const copyToClipboard = () => {
+    // let copyText = document.querySelector(".signature");
+    const code = sign.current;
+    const range = document.createRange();
+    if (code) {
+      range.selectNode(code);
+    }
+    const windowSelection = window.getSelection();
+    if (windowSelection) {
+      windowSelection.removeAllRanges();
+      windowSelection.addRange(range);
+    }
+    try {
+      let successful = document.execCommand("copy");
+      console.log(successful ? "Success" : "Fail");
+      setCopied(true);
+    } catch (err) {
+      setCopied(false);
+      console.log("Fail");
+    }
+  };
 
+  useEffect(() => {
+    setCopied(false);
+  }, [props.formData]);
   const style = {
     lincoCareLogo: {
       verticalAlign: "bottom",
@@ -26,6 +49,7 @@ export default function Template(props) {
     },
     Banner: {
       marginTop: "9px",
+      marginBottom: "4px",
     },
     textSize: {
       color: "#333333",
@@ -40,6 +64,7 @@ export default function Template(props) {
     },
     VerticalAlignTop: {
       verticalAlign: "top",
+      marginTop: "3pt",
     },
     floatLeft: {
       minWidth: "150pt",
@@ -77,46 +102,42 @@ export default function Template(props) {
             <Sedex />
           </td>
           <td align="right" style={style.floatRight}>
-            <font style={style.textSize}>
-              Committed to being a responsible and sustainable business.
-            </font>
+            <SocialIcons />
           </td>
         </table>
-        <table
-          cellpadding="0"
-          cellspacing="0"
-          border="0"
-          style={style.VerticalAlignTop}
-        >
-          <tbody>
-            <td>
-              <font>
-                <div style={style.border}></div>
-              </font>
-            </td>
-          </tbody>
-        </table>
-        <table cellpadding="0" cellspacing="0" border="0">
-          <tbody style={style.VerticalAlignTop}>
-            <td style={style.floatLeft}>
-              <font style={style.bottomTextSize}>
-                <a href="https://lincocare.com">lincocare.com</a>
-              </font>
-            </td>
-            <td align="right" valign="bottom" style={style.floatRight}>
-              <img
-                alt="social"
-                src="https://lincocare.s3.eu-west-2.amazonaws.com/lincocare-signature/social.png"
-              />
-              <font style={style.bottomTextSize}>@lincocare</font>
-            </td>
-          </tbody>
-        </table>
       </table>
-      <button className="GenerateButton" onClick={handleClick}>
+      <button className="GenerateButton mt-4" onClick={handleClick}>
         Generate HTML code
       </button>
+      <button className="GenerateButton" onClick={copyToClipboard}>
+        {copied ? "Copied " : "Copy it to your clipboard"}
+      </button>
       <textarea ref={codePlaceHolder}></textarea>
+      <p>
+        <a
+          href="https://support.microsoft.com/en-us/office/create-and-add-an-email-signature-in-outlook-com-776d9006-abdf-444e-b5b7-a61821dff034"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn how to add a signature in Outlook.com
+        </a>
+        <br />
+        <a
+          href="https://www.cnet.com/tech/services-and-software/how-to-add-a-signature-to-microsoft-outlook-emails/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn how to add a signature in Outlook emails
+        </a>
+        <br />
+        <a
+          href="https://support.apple.com/en-gb/guide/mail/mail11943/mac"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn how to add a signature in Mail on Mac
+        </a>
+      </p>
     </div>
   );
 }

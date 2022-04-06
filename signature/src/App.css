@@ -11,6 +11,10 @@
 h5 {
   margin: 0;
 }
+p {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
 .GeneratorContainer {
   display: flex;
   gap: 30px;
@@ -56,6 +60,7 @@ h5 {
   background-color: #5999c6;
   color: white;
   width: 100%;
+  min-width: 200px;
   font-size: large;
   border: 0;
   padding: 10px;
@@ -76,4 +81,8 @@ textarea {
   background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
+}
+
+.mt-4 {
+  margin-top: 4rem;
 }
